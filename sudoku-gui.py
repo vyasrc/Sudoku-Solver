@@ -1,5 +1,4 @@
 import tkinter as tk
-import random
 import tkinter.messagebox
 import threading
 import numpy as np
@@ -52,7 +51,7 @@ class GUI(tk.Frame):
             i, j = divmod(c, n)
             i0, j0 = i - i % m, j - j % m  # Origin of mxm block
             numbers = list(range(1, n + 1))
-            random.shuffle(numbers)
+            np.random.shuffle(numbers)
             for x in numbers:
                 if (x not in board[i]  # row
                         and all(row[j] != x for row in board)  # column
